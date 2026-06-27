@@ -58,8 +58,9 @@ def train(model,train_dataset):
     criterion=nn.CrossEntropyLoss()
     optimizer=optim.Adam(model.parameters(),lr=0.001,betas=(0.9,0.999))
     logger=model.logger
-    #循环比例epochs
-    epochs=50  #训练总轮数
+
+    epochs=100  #训练总轮数
+    logger.info(f'模型训练开始,当前时间为:{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}')
     for epoch in range(epochs):
         start = time.time()
         #定义变量，记录每轮的损失函数和批次数
@@ -80,7 +81,9 @@ def train(model,train_dataset):
             # 计算准确率
             total_correct += (y_pred == y).sum().item()
         logger.info(f'当前轮数:{epoch}，当前轮的平均损失:{total_loss/batch_num:.4f},当前轮的正确率(Accuracy):{total_correct/len(train_dataset)*100}%,耗时：{time.time()-start:.4f}s')
-
+        print((f'当前轮数:{epoch}，当前轮的平均损失:{total_loss/batch_num:.4f},当前轮的正确率(Accuracy):{total_correct/len(train_dataset)*100}%,耗时：{time.time()-start:.4f}s'))
+    logger.info(f'模型训练结束,当前时间为:{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}')
+    torch.save(model.state_dict(),'../model/CNNImageModel.pth')
 #4.模型测试
 
 
