@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b99a5de2-f004-4cac-aa36-f0ce007539ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/DLProject_CNN.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cifar-10-batches-py/batches.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cifar-10-batches-py/data_batch_1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cifar-10-batches-py/data_batch_2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cifar-10-batches-py/data_batch_3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cifar-10-batches-py/data_batch_4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cifar-10-batches-py/data_batch_5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cifar-10-batches-py/readme.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cifar-10-batches-py/test_batch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ImageClassification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/log.py" afterDir="false" />
+    <list default="true" id="b99a5de2-f004-4cac-aa36-f0ce007539ec" name="Changes" comment="训练模型并保存参数">
+      <change afterPath="$PROJECT_DIR$/.idea/claudeCodeTabState.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/CNNModel20260628.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/CNNModel_optimization20260628.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ModelOptimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ImageClassification.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageClassification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/log.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,21 +29,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Ferryslx"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Ferryslx&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Ferryslx/CNNtoImageClassification.git",
-    "accountId": "e6f0664d-0273-41de-959f-e77b27545188"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ferryslx/CNNtoImageClassification.git&quot;,
+    &quot;accountId&quot;: &quot;e6f0664d-0273-41de-959f-e77b27545188&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="3FiftkP2EGFpMMrLiaUUvFCnPgB" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -64,9 +56,11 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.ImageClassification.executor": "Run",
+    "Python.ModelOptimization.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/PythonProject/DLProject_CNN/data",
     "node.js.detected.package.eslint": "true",
@@ -83,7 +77,7 @@
       <recent name="C:\PythonProject\DLProject_CNN\utils" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.ModelOptimization">
     <configuration name="ImageClassification" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DLProject_CNN" />
       <option name="ENV_FILES" value="" />
@@ -107,8 +101,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ModelOptimization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DLProject_CNN" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/ModelOptimization.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ModelOptimization" />
         <item itemvalue="Python.ImageClassification" />
       </list>
     </recent_temporary>
@@ -128,14 +146,49 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1782563026606</updated>
-      <workItem from="1782563027674" duration="5231000" />
+      <workItem from="1782563027674" duration="10416000" />
+      <workItem from="1782616773102" duration="30733000" />
     </task>
+    <task id="LOCAL-00001" summary="CNN数据集创建,（卷积）神经网络初步搭建,模型训练代码完成">
+      <option name="closed" value="true" />
+      <created>1782568321452</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1782568321453</updated>
+    </task>
+    <task id="LOCAL-00002" summary="训练模型并保存参数">
+      <option name="closed" value="true" />
+      <created>1782577110220</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1782577110222</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CNN数据集创建,（卷积）神经网络初步搭建,模型训练代码完成" />
+    <MESSAGE value="训练模型并保存参数" />
+    <option name="LAST_COMMIT_MESSAGE" value="训练模型并保存参数" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DLProject_CNN$ImageClassification.coverage" NAME="ImageClassification Coverage Results" MODIFIED="1782568100299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/DLProject_CNN$ModelOptimization.coverage" NAME="ModelOptimization Coverage Results" MODIFIED="1782645692946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/DLProject_CNN$ImageClassification.coverage" NAME="ImageClassification Coverage Results" MODIFIED="1782619259922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

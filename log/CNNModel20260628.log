@@ -1,0 +1,44 @@
+2026-06-28 11:54:56,916 - INFO: 开始创建模型对象:ImageClassification(
+  (conv1): Conv2d(3, 6, kernel_size=(3, 3), stride=(1, 1))
+  (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(6, 16, kernel_size=(3, 3), stride=(1, 1))
+  (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (linear1): Linear(in_features=576, out_features=120, bias=True)
+  (linear2): Linear(in_features=120, out_features=84, bias=True)
+  (output): Linear(in_features=84, out_features=10, bias=True)
+)
+2026-06-28 11:54:57,022 - INFO: 模型测试开始，当前时间为:2026-06-28 11:54:57
+2026-06-28 11:54:57,022 - INFO: 模型测试开始，当前时间为:2026-06-28 11:54:57
+2026-06-28 11:54:58,602 - INFO: 当前轮的正确率(Accuracy):56.6800%，测试集的样本数量是:10000
+2026-06-28 11:54:58,602 - INFO: 当前轮的正确率(Accuracy):56.6800%，测试集的样本数量是:10000
+2026-06-28 11:54:58,602 - INFO: 模型测试结束，当前时间为:2026-06-28 11:54:58
+2026-06-28 11:54:58,602 - INFO: 模型测试结束，当前时间为:2026-06-28 11:54:58
+2026-06-28 11:57:41,841 - INFO: 开始创建模型对象:ImageClassification(
+  (conv1): Conv2d(3, 6, kernel_size=(3, 3), stride=(1, 1))
+  (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(6, 16, kernel_size=(3, 3), stride=(1, 1))
+  (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (linear1): Linear(in_features=576, out_features=120, bias=True)
+  (linear2): Linear(in_features=120, out_features=84, bias=True)
+  (output): Linear(in_features=84, out_features=10, bias=True)
+)
+2026-06-28 11:57:41,947 - INFO: handler count: 2
+2026-06-28 11:57:41,947 - INFO: handler count: 2
+2026-06-28 11:57:41,948 - INFO: 模型测试开始，当前时间为:2026-06-28 11:57:41
+2026-06-28 11:57:41,948 - INFO: 模型测试开始，当前时间为:2026-06-28 11:57:41
+2026-06-28 11:57:43,484 - INFO: 当前轮的正确率(Accuracy):56.6800%，测试集的样本数量是:10000
+2026-06-28 11:57:43,484 - INFO: 当前轮的正确率(Accuracy):56.6800%，测试集的样本数量是:10000
+2026-06-28 11:57:43,484 - INFO: 模型测试结束，当前时间为:2026-06-28 11:57:43
+2026-06-28 11:57:43,484 - INFO: 模型测试结束，当前时间为:2026-06-28 11:57:43
+2026-06-28 12:01:07,362 - INFO: 开始创建模型对象:ImageClassification(
+  (conv1): Conv2d(3, 6, kernel_size=(3, 3), stride=(1, 1))
+  (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(6, 16, kernel_size=(3, 3), stride=(1, 1))
+  (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (linear1): Linear(in_features=576, out_features=120, bias=True)
+  (linear2): Linear(in_features=120, out_features=84, bias=True)
+  (output): Linear(in_features=84, out_features=10, bias=True)
+)
+2026-06-28 12:01:07,377 - INFO: 模型测试开始，当前时间为:2026-06-28 12:01:07
+2026-06-28 12:01:08,989 - INFO: 当前轮的正确率(Accuracy):56.6800%，测试集的样本数量是:10000
+2026-06-28 12:01:08,989 - INFO: 模型测试结束，当前时间为:2026-06-28 12:01:08

@@ -12,6 +12,16 @@ from torchsummary import summary
 
 from utils.log import Logger
 
+"""
+优化思路：
+1.增加卷积核数量
+2.增加全连接层的参数量
+3.调整学习率
+4.调整优化方法
+5.调整激活函数
+6....
+"""
+
 # 每批次样本数
 BATCH_SIZE = 8
 
@@ -36,7 +46,6 @@ class ImageClassification(nn.Module):
         self.linear1=nn.Linear(576,120)
         self.linear2=nn.Linear(120,84)
         self.output=nn.Linear(84,10)
-        #日志
         # 日志
         logfile_name = 'CNNModel' + datetime.datetime.now().strftime('%Y%m%d')
         self.logger = Logger('../', logfile_name).get_logger()
@@ -77,15 +86,32 @@ def train(model,train_dataset):
             total_loss+=loss.item()*x.size(0)
             batch_num+=x.size(0)
             # 根据加权求和得到类别，用argmax函数获取最大值对应的下标，就是类别
-            y_pred = torch.argmax(y_pred, dim=1)  # dim=1表示逐行处理
+            y_pred = torch.argmax(y_pred, dim=-1)  # dim=-1表示逐行处理
             # 计算准确率
             total_correct += (y_pred == y).sum().item()
         logger.info(f'当前轮数:{epoch}，当前轮的平均损失:{total_loss/batch_num:.4f},当前轮的正确率(Accuracy):{total_correct/len(train_dataset)*100}%,耗时：{time.time()-start:.4f}s')
         print((f'当前轮数:{epoch}，当前轮的平均损失:{total_loss/batch_num:.4f},当前轮的正确率(Accuracy):{total_correct/len(train_dataset)*100}%,耗时：{time.time()-start:.4f}s'))
     logger.info(f'模型训练结束,当前时间为:{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}')
     torch.save(model.state_dict(),'../model/CNNImageModel.pth')
-#4.模型测试
 
+
+#4.模型测试
+def evaluate(test_dataset):
+    dataloader=DataLoader(test_dataset,batch_size=BATCH_SIZE,shuffle=False)
+    model=ImageClassification()
+    model.load_state_dict(torch.load('../model/CNNImageModel.pth'))
+    logger=model.logger
+    logger.info(f'模型测试开始，当前时间为:{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}')
+    #定义变量,统计预测正确的样本个数
+    total_correct=0
+    for x,y in dataloader:
+        model.eval()   #切换模型状态
+        y_pred=model(x)
+        y_pred=torch.argmax(y_pred,dim=-1)
+        total_correct+=(y_pred == y).sum().item()
+    logger.info(f'当前轮的正确率(Accuracy):{total_correct / len(test_dataset) * 100:.4f}%，测试集的样本数量是:{len(test_dataset)}')
+    print((f'当前轮的正确率(Accuracy):{total_correct / len(test_dataset) * 100:.4f}%'))
+    logger.info(f'模型测试结束，当前时间为:{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}')
 
 
 if __name__ == '__main__':
@@ -95,4 +121,5 @@ if __name__ == '__main__':
     logger.info(f'开始创建模型对象:{model}')
     #查看模型参数
     summary(model,(3,32,32),batch_size=BATCH_SIZE)
-    train(model,train_dataset)
+    #train(model,train_dataset)
+    evaluate(test_dataset)

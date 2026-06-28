@@ -30,17 +30,17 @@ class Logger(object):
         self.logger.setLevel(self.level_relations.get(level))
 
     def get_logger(self):
-        # 指定对应的 Handler 为 FileHandler 对象， 这个可适用于多线程情况
-        path = os.path.join(self.root_path, 'log')
-        os.makedirs(path, exist_ok=True)
-        file_name = os.path.join(path, self.log_name + '.log')
-        rotate_handler = logging.FileHandler(file_name, encoding="utf-8", mode="a")
+        if not self.logger.handlers:
+            path = os.path.join(self.root_path, 'log')
+            os.makedirs(path, exist_ok=True)
 
-        # Handler 对象 rotate_handler 的输出格式
-        formatter = logging.Formatter(self.fmt)
-        rotate_handler.setFormatter(formatter)
+            file_name = os.path.join(path, self.log_name + '.log')
+            rotate_handler = logging.FileHandler(file_name, encoding="utf-8", mode="a")
 
-        # 将rotate_handler添加到Logger
-        self.logger.addHandler(rotate_handler)
+            formatter = logging.Formatter(self.fmt)
+            rotate_handler.setFormatter(formatter)
+
+            self.logger.addHandler(rotate_handler)
+            self.logger.propagate = False
 
         return self.logger
